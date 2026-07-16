@@ -93,125 +93,416 @@
             </div>
     </nav>
 
-    <!--
-        ============================================
-                SECCIÓN HERO (PORTADA PRINCIPAL)
-        ============================================
+    <!-- ==========================================
+     HERO SECTION
+     ========================================== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950"
+        aria-label="Sección principal">
+
+        <!-- BACKGROUND IMAGE -->
+        <div class="absolute inset-0 z-0">
+            <!-- 
+      PRODUCCIÓN: Cambiar por imagen local
+      src="img/hero/barberia.webp"
+      srcset="img/hero/barberia-640.webp 640w, img/hero/barberia-1280.webp 1280w"
+      sizes="100vw"
     -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <!-- Capa de gradiente oscuro para mejorar legibilidad del texto -->
-        <div class="absolute inset-0 bg-gradient-to-r from-barberia-dark to-transparent z-10"></div>
-
-        <!-- Imagen de fondo de la barbería con opacidad reducida -->
-        <div
-            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-30">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop"
+                alt="" class="w-full h-full object-cover object-center scale-105" loading="eager" fetchpriority="high"
+                aria-hidden="true" id="heroBg">
         </div>
 
-        <!-- Contenido principal del hero (por encima de las capas) -->
-        <div class="relative z-20 text-center px-6 max-w-4xl">
-            <!-- Título principal con fuente grande y decorativa -->
-            <h1 class="text-5xl md:text-7xl font-display font-black mb-6">
-                <span class="text-red-600">EL ARTE</span> DE<br>UN BUEN CORTE - ISAAC
-            </h1>
+        <!-- OVERLAY SYSTEM - 4 capas para profundidad -->
+        <div class="absolute inset-0 z-10" aria-hidden="true">
+            <!-- Capa 1: Oscuridad base -->
+            <div class="absolute inset-0 bg-gray-950/50"></div>
 
-            <!-- Subtítulo descriptivo -->
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                (Descripción breve de la barbería, su historia o su filosofía. Algo que conecte emocionalmente con el
-                cliente y lo invite a conocer más.)
-            </p>
+            <!-- Capa 2: Viñeta radial -->
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.8)_100%)]">
+            </div>
 
-            <!-- Botón de llamada a la acción (CTA) para WhatsApp -->
-            <button onclick="contactarWhatsApp()"
-                class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg">
-                <i class="fab fa-whatsapp mr-2"></i>Reserva tu cita
-            </button>
+            <!-- Capa 3: Gradiente inferior para legibilidad -->
+            <div
+                class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent">
+            </div>
+
+            <!-- Capa 4: Acento de color sutil -->
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent"></div>
         </div>
+
+        <!-- CONTENT CONTAINER -->
+        <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+
+                <!-- BADGE - Micro-interacción preparada -->
+                <div class="inline-block mb-8 opacity-0 translate-y-4" data-animate="fade-up" data-delay="100">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-amber-400 text-sm font-medium tracking-wider uppercase">
+                        <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+                        Peluquería & Barbería
+                    </span>
+                </div>
+
+                <!-- HEADLINE - Jerarquía tipográfica -->
+                <h1 class="mb-6 opacity-0 translate-y-4" data-animate="fade-up" data-delay="300">
+                    <span
+                        class="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.1]">
+                        TU ESTILO
+                    </span>
+                    <span
+                        class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-amber-400 tracking-wide mt-3">
+                        NUESTRO ARTE
+                    </span>
+                </h1>
+
+                <!-- SUBHEADLINE - Valor + Beneficio -->
+                <p class="max-w-2xl mx-auto mb-12 text-lg sm:text-xl text-gray-300 font-light leading-relaxed opacity-0 translate-y-4"
+                    data-animate="fade-up" data-delay="500">
+                    Cortes que transforman tu imagen,
+                    <span class="text-amber-400/80 font-normal">en un ambiente donde te sientes como en casa</span>
+                </p>
+
+                <!-- CTA BUTTONS -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 translate-y-4"
+                    data-animate="fade-up" data-delay="700">
+                    <!-- Primary CTA - WhatsApp -->
+                    <button id="btnWhatsApp"
+                        class="group relative inline-flex items-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-gray-900 font-semibold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                        aria-label="Reservar cita por WhatsApp">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Reservar cita
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </button>
+
+                    <!-- Secondary CTA - Servicios -->
+                    <a href="#servicios"
+                        class="inline-flex items-center gap-2 px-6 py-4 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500 rounded-full transition-all duration-300 hover:bg-white/5 backdrop-blur-sm"
+                        aria-label="Ver servicios">
+                        Nuestros servicios
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SCROLL INDICATOR -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 opacity-0" data-animate="fade-in"
+            data-delay="1000">
+            <div class="animate-bounce">
+                <svg class="w-8 h-8 text-amber-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+
     </section>
 
-    <!--
-        ============================================
-                    SECCIÓN DE SERVICIOS
-        ============================================
-    -->
-    <section id="servicios" class="py-20 px-6 bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <!-- Encabezado de la sección -->
-            <h2 class="text-black text-4xl md:text-5xl font-display font-bold text-center mb-4">
-                Nuestros <span class="text-blue-600">Servicios</span>
-            </h2>
-            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-                Ofrecemos servicios de alta calidad para el cuidado masculino
-            </p>
+    <!-- ==========================================
+     SERVICES SECTION
+     ========================================== -->
+    <section id="servicios" class="relative py-24 sm:py-32 bg-gray-950" aria-label="Servicios">
 
-            <!-- Grid de servicios -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
-                <div
-                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
-                    <!-- <div class="text-4xl mb-4">✂️</div> -->
-                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Corte de Cabello (Clásico o
-                        Moderno)</h3>
-                    <p class="text-justify text-gray-500 mb-4">Corte de pelo personalizado a máquina y tijera, incluye
-                        acabados con
-                        fade (degradados) y peinado final con productos profesionales (ceras, polvos, pomadas)</p>
-                    <p class="text-center text-3xl font-bold text-white">S/35</p>
-                </div>
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/3 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-600/2 rounded-full blur-3xl"></div>
+        </div>
 
-                <!-- Servicio 2 -->
-                <div
-                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
-                    <!-- <div class="text-4xl mb-4">🪒</div> -->
-                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Arreglo y Perfilado de Barba
-                    </h3>
-                    <p class="text-justify text-gray-500 mb-4">Rebaje, diseño de contornos y perfilado de la barba.
-                        Suele incluir el
-                        uso de máquina, navaja, toalla caliente y aplicación de aceites hidratantes o after shave.</p>
-                    <p class="text-center text-3xl font-bold text-white">S/20</p>
-                </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <!-- Servicio 3 -->
-                <div
-                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
-                    <!-- <div class="text-4xl mb-4">💈</div> -->
-                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Servicio Completo (Corte +
-                        Barba)</h3>
-                    <p class="text-justify text-gray-500 mb-4">Un combo que incluye corte de cabello, diseño de barba y
-                        lavado
-                        capilar, ideal para un cambio de look total en una sola sesión.</p>
-                    <p class="text-center text-3xl font-bold text-white">S/50</p>
-                </div>
+            <!-- Section Header -->
+            <div class="text-center mb-16 sm:mb-20">
+                <span class="inline-block text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4"
+                    data-animate="fade-up" data-delay="0">
+                    Nuestros Servicios
+                </span>
 
-                <!-- Servicio 4 -->
-                <div
-                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
-                    <!-- <div class="text-4xl mb-4">✂️</div> -->
-                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Afeitado Clásico o Spa</h3>
-                    <p class="text-justify text-gray-500 mb-4">Experiencia de afeitado al ras con navaja tradicional.
-                        Incluye el uso de toallas calientes, vapor y lociones para abrir y cerrar los poros, evitando la
-                        irritación</p>
-                    <p class="text-center text-3xl font-bold text-white">S/30</p>
-                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" data-animate="fade-up"
+                    data-delay="100">
+                    Expertos en
+                    <span class="text-amber-400">tu estilo</span>
+                </h2>
 
-                <!-- Servicio 5 -->
-                <div
-                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
-                    <!-- <div class="text-4xl mb-4">🪒</div> -->
-                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Limpieza Facial</h3>
-                    <p class="text-justify text-gray-500 mb-4">Tratamiento enfocado en el cuidado de la piel del rostro.
-                        Incluye exfoliación, vaporización, retiro de puntos negros y aplicación de mascarillas.</p>
-                    <p class="text-center text-3xl font-bold text-white">S/35</p>
-                </div>
-
-                <!-- Servicio 6 -->
-                <!-- <div
-                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
-                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Servicio 6</h3>
-                    <p class="text-justify text-gray-500 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Consectetur nesciunt commodi neque culpa voluptates cumque, et delectus sit! Odit ex ipsum rerum
-                        eos commodi. Architecto accusamus quod odio assumenda modi?</p>
-                    <p class="text-center text-3xl font-bold text-white">S/30</p>
-                </div> -->
+                <p class="max-w-3xl mx-auto text-lg text-gray-400 font-light leading-relaxed" data-animate="fade-up"
+                    data-delay="200">
+                    Cada corte es una obra de arte. Utilizamos técnicas premium y productos de alta calidad para
+                    garantizar resultados excepcionales.
+                </p>
             </div>
+
+            <!-- Services Grid -->
+            <!-- 
+      ESTRUCTURA PREPARADA PARA V2:
+      Estas tarjetas se generarán dinámicamente desde data/servicios.json
+      Mantener esta estructura HTML como template base
+    -->
+            <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list"
+                aria-label="Lista de servicios">
+
+                <!-- Service Card 1 - Template reutilizable -->
+                <div class="group relative bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl p-8 sm:p-10 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="300" role="listitem" data-service-id="1" data-service-price="25">
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors duration-500">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <h3
+                        class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
+                        Corte Clásico
+                    </h3>
+
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Técnica precisa con tijera y máquina. Incluye lavado y peinado con productos premium.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <span class="text-2xl font-bold text-amber-400">
+                            S/25
+                        </span>
+
+                        <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            45 min
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group relative bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl p-8 sm:p-10 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="400" role="listitem" data-service-id="2" data-service-price="35">
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors duration-500">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <h3
+                        class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
+                        Degradado Premium
+                    </h3>
+
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Fade perfecto con transición milimétrica. El degradado que define tu estilo personal.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <span class="text-2xl font-bold text-amber-400">
+                            S/35
+                        </span>
+
+                        <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            50 min
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group relative bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl p-8 sm:p-10 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="500" role="listitem" data-service-id="3" data-service-price="30">
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors duration-500">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <h3
+                        class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
+                        Barba Diseñada
+                    </h3>
+
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Perfilado y diseño de barba con navaja caliente y productos hidratantes premium.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <span class="text-2xl font-bold text-amber-400">
+                            S/30
+                        </span>
+
+                        <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            30 min
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="group relative bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl p-8 sm:p-10 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="600" role="listitem" data-service-id="4" data-service-price="45">
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors duration-500">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <h3
+                        class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
+                        Pack Completo
+                    </h3>
+
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Corte + Barba + Cejas. La experiencia completa para una transformación total.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl font-bold text-amber-400">S/45</span>
+                            <span class="text-xs text-gray-500 line-through">S/60</span>
+                        </div>
+
+                        <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            60 min
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="group relative bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl p-8 sm:p-10 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="700" role="listitem" data-service-id="5" data-service-price="20">
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors duration-500">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <h3
+                        class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
+                        Corte Infantil
+                    </h3>
+
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Paciencia y técnica para los más pequeños. Corte adaptado a niños con estilo.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <span class="text-2xl font-bold text-amber-400">
+                            S/20
+                        </span>
+
+                        <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            30 min
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 - Highlighted -->
+                <div class="group relative bg-gradient-to-br from-amber-500/10 to-amber-600/5 backdrop-blur-sm border border-amber-500/20 rounded-2xl p-8 sm:p-10 hover:border-amber-500/40 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="800" role="listitem" data-service-id="6" data-service-price="15">
+                    <!-- Badge -->
+                    <span
+                        class="absolute top-4 right-4 px-3 py-1 bg-amber-500 text-gray-900 text-xs font-bold rounded-full">
+                        POPULAR
+                    </span>
+
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/30 transition-colors duration-500">
+                        <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <h3
+                        class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
+                        Diseño Creativo
+                    </h3>
+
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Rayas, líneas y dibujos personalizados. Dale un toque único a tu corte.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between pt-6 border-t border-amber-500/10">
+                        <span class="text-2xl font-bold text-amber-400">
+                            S/15
+                        </span>
+
+                        <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            20 min
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer CTA -->
+            <div class="text-center mt-16" data-animate="fade-up" data-delay="900">
+                <p class="text-gray-400 mb-6 font-light">
+                    ¿No encuentras lo que buscas? Contáctanos para un servicio personalizado
+                </p>
+                <button id="btnWhatsAppServices"
+                    class="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 rounded-full transition-all duration-300"
+                    aria-label="Consultar por WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                    </svg>
+                    Consultar precios especiales
+                </button>
+            </div>
+
         </div>
     </section>
 

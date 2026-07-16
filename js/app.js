@@ -1,5 +1,17 @@
-import { initMenu } from "./menu.js";
+/**
+ * app.js
+ * Punto de entrada del proyecto
+ * Filosofía: Un módulo, una responsabilidad
+ */
 
-document.addEventListener("DOMContentLoaded", () => {
+import { initMenu } from './menu.js';
+import { initScroll } from './scroll.js';
+import { initAnimations } from './animations.js';
+import { initWhatsApp } from './whatsapp.js';
+
+document.addEventListener('DOMContentLoaded', () => {
     initMenu();
+    initScroll();
+    initAnimations();
+    initWhatsApp();
 });

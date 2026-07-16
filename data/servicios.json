@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "nombre": "Corte Clásico",
+        "descripcion": "Técnica precisa con tijera y máquina. Incluye lavado y peinado con productos premium.",
+        "precio": 25,
+        "duracion": "45 min",
+        "icono": "scissors",
+        "destacado": false
+    },
+    {
+        "id": 2,
+        "nombre": "Degradado Premium",
+        "descripcion": "Fade perfecto con transición milimétrica. El degradado que define tu estilo personal.",
+        "precio": 35,
+        "duracion": "50 min",
+        "icono": "edit",
+        "destacado": false
+    },
+    {
+        "id": 3,
+        "nombre": "Barba Diseñada",
+        "descripcion": "Perfilado y diseño de barba con navaja caliente y productos hidratantes premium.",
+        "precio": 30,
+        "duracion": "30 min",
+        "icono": "paint",
+        "destacado": false
+    },
+    {
+        "id": 4,
+        "nombre": "Pack Completo",
+        "descripcion": "Corte + Barba + Cejas. La experiencia completa para una transformación total.",
+        "precio": 45,
+        "precio_original": 60,
+        "duracion": "60 min",
+        "icono": "flask",
+        "destacado": false
+    },
+    {
+        "id": 5,
+        "nombre": "Corte Infantil",
+        "descripcion": "Paciencia y técnica para los más pequeños. Corte adaptado a niños con estilo.",
+        "precio": 20,
+        "duracion": "30 min",
+        "icono": "tv",
+        "destacado": false
+    },
+    {
+        "id": 6,
+        "nombre": "Diseño Creativo",
+        "descripcion": "Rayas, líneas y dibujos personalizados. Dale un toque único a tu corte.",
+        "precio": 15,
+        "duracion": "20 min",
+        "icono": "star",
+        "destacado": true
+    }
+]
