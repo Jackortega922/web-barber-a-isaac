@@ -10,6 +10,7 @@ import { initAnimations } from './animations.js';
 import { initWhatsApp } from './whatsapp.js';
 import { initCatalog } from './catalog.js';
 import { initGallery } from './gallery.js';
+import { initFooter } from './footer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
@@ -18,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initWhatsApp();
     initCatalog();
     initGallery();
+    initFooter();
 });
