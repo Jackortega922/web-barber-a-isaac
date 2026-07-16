@@ -506,61 +506,294 @@
         </div>
     </section>
 
-    <!--
-        ============================================
-                SECCIÓN DE GALERÍA DE IMÁGENES
-        ============================================
-    -->
-    <section id="galeria" class="py-20 px-6 bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-black text-4xl md:text-5xl font-display font-bold text-center mb-4">
-                Nuestra <span class="text-blue-600">Galería</span>
-            </h2>
-            <p class="text-gray-600 text-center mb-12">Algunos de nuestros mejores trabajos</p>
+    <!-- ==========================================
+     CATALOG SECTION
+     Filosofía: Catálogo visual + Carga dinámica
+     Preparado para: data/cortes.json (V2)
+     ========================================== -->
+    <section id="catalogo" class="relative py-24 sm:py-32 bg-gray-900" aria-label="Catálogo de cortes">
 
-            <!-- Grid de imágenes con efecto hover -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Imagen 1 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Corte 1" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 2 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Corte 2" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 3 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Corte 3" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 4 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://theshaveclub.imgix.net/uploads/2025/03/Diferencia-entre-barberia-y-peluqueria.jpg?auto=format%2Ccompress&ixlib=php-3.3.0"
-                        alt="Corte 4" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 5 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://www.emagister.com/blog/wp-content/uploads/2020/10/nathon-oski-EW_rqoSdDes-unsplash.jpg"
-                        alt="Corte 1" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 6 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://www.blackwhitebarber.es/images/barberia-vigo.jpg" alt="Corte 2"
-                        class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 7 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://images.fresha.com/locations/location-profile-images/2657770/6001511/8cee3734-3a05-47f0-9978-b66c75eabb8f-URBANUSBARBERA-CO-Antioquia-LaCeja-Fresha.jpg?class=venue-gallery-mobile&f_width=3840"
-                        alt="Corte 3" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
-                <!-- Imagen 8 -->
-                <div class="relative overflow-hidden rounded-xl group">
-                    <img src="https://galanobarbershop.com.uy/wp-content/uploads/2025/01/Galano-Barberia-Barberia-Montevideo.jpg"
-                        alt="Corte 4" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
-                </div>
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute top-1/2 left-0 w-72 h-72 bg-amber-500/3 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/2 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16 sm:mb-20">
+                <span class="inline-block text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4"
+                    data-animate="fade-up">
+                    Catálogo
+                </span>
+
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" data-animate="fade-up"
+                    data-delay="100">
+                    Encuentra
+                    <span class="text-amber-400">tu estilo</span>
+                </h2>
+
+                <p class="max-w-3xl mx-auto text-lg text-gray-400 font-light leading-relaxed" data-animate="fade-up"
+                    data-delay="200">
+                    Explora nuestra colección de cortes. Cada estilo está diseñado para resaltar tu personalidad.
+                </p>
             </div>
+
+            <!-- Category Filters -->
+            <!-- 
+      PREPARADO PARA V2:
+      Las categorías se generarán dinámicamente desde cortes.json
+    -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" data-animate="fade-up" data-delay="300"
+                role="tablist" aria-label="Filtrar por categoría" id="catalogFilters">
+                <button
+                    class="px-6 py-2.5 bg-amber-500 text-gray-900 font-medium rounded-full transition-all duration-300 hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    role="tab" aria-selected="true" data-filter="todos">
+                    Todos
+                </button>
+
+                <button
+                    class="px-6 py-2.5 bg-white/5 text-gray-300 font-medium rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    role="tab" aria-selected="false" data-filter="clasicos">
+                    Clásicos
+                </button>
+
+                <button
+                    class="px-6 py-2.5 bg-white/5 text-gray-300 font-medium rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    role="tab" aria-selected="false" data-filter="degradados">
+                    Degradados
+                </button>
+
+                <button
+                    class="px-6 py-2.5 bg-white/5 text-gray-300 font-medium rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    role="tab" aria-selected="false" data-filter="modernos">
+                    Modernos
+                </button>
+
+                <button
+                    class="px-6 py-2.5 bg-white/5 text-gray-300 font-medium rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    role="tab" aria-selected="false" data-filter="creativos">
+                    Creativos
+                </button>
+            </div>
+
+            <!-- Catalog Grid -->
+            <!-- 
+      ESTRUCTURA PREPARADA PARA V2:
+      Las cards se generarán dinámicamente desde data/cortes.json
+      Mantener esta estructura como template base
+    -->
+            <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                role="list" aria-label="Galería de cortes">
+
+                <!-- Catalog Card 1 - Template -->
+                <div class="group relative bg-gray-800/50 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="400" role="listitem" data-corte-id="1" data-categoria="clasicos">
+                    <!-- Image Container -->
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-800">
+                        <!-- 
+            PRODUCCIÓN: Usar imágenes locales
+            src="img/cortes/corte-clasico.webp"
+          -->
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&fit=crop"
+                            alt="Corte Clásico"
+                            class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+
+                        <!-- Overlay on hover -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <!-- Quick view button -->
+                        <button
+                            class="absolute bottom-4 left-4 right-4 px-4 py-2.5 bg-amber-500 text-gray-900 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0"
+                            aria-label="Ver detalles del corte">
+                            Ver estilo
+                        </button>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors duration-300">
+                                Corte Clásico
+                            </h3>
+                            <span class="px-2.5 py-1 bg-amber-500/10 text-amber-400 text-xs font-medium rounded-full">
+                                Popular
+                            </span>
+                        </div>
+
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-4">
+                            Estilo atemporal con degradado medio y acabado texturizado.
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-amber-400">S/25</span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                45 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catalog Card 2 - Degradado -->
+                <div class="group relative bg-gray-800/50 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="500" role="listitem" data-corte-id="2"
+                    data-categoria="degradados">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665f32?w=600&auto=format&fit=crop"
+                            alt="Fade Perfecto"
+                            class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <button
+                            class="absolute bottom-4 left-4 right-4 px-4 py-2.5 bg-amber-500 text-gray-900 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0"
+                            aria-label="Ver detalles del corte">
+                            Ver estilo
+                        </button>
+                    </div>
+
+                    <div class="p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors duration-300">
+                                Fade Perfecto
+                            </h3>
+                            <span class="px-2.5 py-1 bg-amber-500/10 text-amber-400 text-xs font-medium rounded-full">
+                                Tendencia
+                            </span>
+                        </div>
+
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-4">
+                            Degradado alto con transición suave y definición precisa.
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-amber-400">S/35</span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                50 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catalog Card 3 - Moderno -->
+                <div class="group relative bg-gray-800/50 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="600" role="listitem" data-corte-id="3" data-categoria="modernos">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?w=600&auto=format&fit=crop"
+                            alt="Texturizado Moderno"
+                            class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <button
+                            class="absolute bottom-4 left-4 right-4 px-4 py-2.5 bg-amber-500 text-gray-900 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0"
+                            aria-label="Ver detalles del corte">
+                            Ver estilo
+                        </button>
+                    </div>
+
+                    <div class="p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors duration-300">
+                                Texturizado Moderno
+                            </h3>
+                        </div>
+
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-4">
+                            Corte en capas con textura natural y movimiento.
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-amber-400">S/30</span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                40 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catalog Card 4 - Creativo -->
+                <div class="group relative bg-gray-800/50 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-amber-500/20 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                    data-animate="fade-up" data-delay="700" role="listitem" data-corte-id="4"
+                    data-categoria="creativos">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&fit=crop"
+                            alt="Diseño con Líneas"
+                            class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <button
+                            class="absolute bottom-4 left-4 right-4 px-4 py-2.5 bg-amber-500 text-gray-900 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0"
+                            aria-label="Ver detalles del corte">
+                            Ver estilo
+                        </button>
+                    </div>
+
+                    <div class="p-5">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors duration-300">
+                                Diseño con Líneas
+                            </h3>
+                            <span class="px-2.5 py-1 bg-amber-500/10 text-amber-400 text-xs font-medium rounded-full">
+                                Exclusivo
+                            </span>
+                        </div>
+
+                        <p class="text-sm text-gray-400 font-light leading-relaxed mb-4">
+                            Líneas geométricas y detalles personalizados únicos.
+                        </p>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-amber-400">S/40</span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                55 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12" data-animate="fade-up" data-delay="800">
+                <button id="loadMoreCatalog"
+                    class="inline-flex items-center gap-2 px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full border border-white/10 hover:border-white/20 transition-all duration-300"
+                    aria-label="Cargar más estilos">
+                    Ver más estilos
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            </div>
+
         </div>
     </section>
 

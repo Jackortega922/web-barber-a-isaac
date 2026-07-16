@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "nombre": "Corte Clásico",
+        "descripcion": "Estilo atemporal con degradado medio y acabado texturizado",
+        "precio": 25,
+        "duracion": "45 min",
+        "categoria": "clasicos",
+        "imagen": "img/cortes/corte-clasico.webp",
+        "etiqueta": "Popular",
+        "destacado": true
+    },
+    {
+        "id": 2,
+        "nombre": "Fade Perfecto",
+        "descripcion": "Degradado alto con transición suave y definición precisa",
+        "precio": 35,
+        "duracion": "50 min",
+        "categoria": "degradados",
+        "imagen": "img/cortes/fade-perfecto.webp",
+        "etiqueta": "Tendencia",
+        "destacado": true
+    },
+    {
+        "id": 3,
+        "nombre": "Texturizado Moderno",
+        "descripcion": "Corte en capas con textura natural y movimiento",
+        "precio": 30,
+        "duracion": "40 min",
+        "categoria": "modernos",
+        "imagen": "img/cortes/texturizado-moderno.webp",
+        "etiqueta": null,
+        "destacado": false
+    },
+    {
+        "id": 4,
+        "nombre": "Diseño con Líneas",
+        "descripcion": "Líneas geométricas y detalles personalizados únicos",
+        "precio": 40,
+        "duracion": "55 min",
+        "categoria": "creativos",
+        "imagen": "img/cortes/diseno-lineas.webp",
+        "etiqueta": "Exclusivo",
+        "destacado": true
+    },
+    {
+        "id": 5,
+        "nombre": "Buzz Cut",
+        "descripcion": "Corte militar uniforme con acabado limpio y preciso",
+        "precio": 20,
+        "duracion": "25 min",
+        "categoria": "clasicos",
+        "imagen": "img/cortes/buzz-cut.webp",
+        "etiqueta": null,
+        "destacado": false
+    },
+    {
+        "id": 6,
+        "nombre": "Pompadour Moderno",
+        "descripcion": "Volumen superior con laterales degradados",
+        "precio": 35,
+        "duracion": "45 min",
+        "categoria": "modernos",
+        "imagen": "img/cortes/pompadour-moderno.webp",
+        "etiqueta": "Clásico",
+        "destacado": false
+    },
+    {
+        "id": 7,
+        "nombre": "Crop Top",
+        "descripcion": "Estilo europeo con flequillo texturizado y fade bajo",
+        "precio": 30,
+        "duracion": "40 min",
+        "categoria": "modernos",
+        "imagen": "img/cortes/crop-top.webp",
+        "etiqueta": "Nuevo",
+        "destacado": true
+    },
+    {
+        "id": 8,
+        "nombre": "Rayo Creativo",
+        "descripcion": "Diseño con rayo lateral y acabado degradado",
+        "precio": 35,
+        "duracion": "45 min",
+        "categoria": "creativos",
+        "imagen": "img/cortes/rayo-creativo.webp",
+        "etiqueta": "Audaz",
+        "destacado": false
+    }
+]
