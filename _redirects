@@ -1,9 +1,0 @@
-# ==========================================
-# NETLIFY REDIRECTS
-# ==========================================
-
-# Redirección de dominio principal
-https://barberia-isaac.netlify.app/*    https://www.barberia-isaac.netlify.app/:splat    301!
-
-# Redirección de páginas antiguas
-/home    /    301
