@@ -1,0 +1,14 @@
+{
+    "phone": "519XXXXXXXXX",
+    "defaultMessage": "¡Hola! Vi tu página web y quiero reservar una cita.",
+    "messages": {
+        "reserva": "¡Hola! Quiero reservar una cita para un corte.",
+        "consulta": "¡Hola! Me gustaría consultar por los servicios y precios.",
+        "personalizado": "¡Hola! Necesito un servicio personalizado, ¿pueden ayudarme?"
+    },
+    "schedule": {
+        "days": "Lunes a Sábado",
+        "hours": "9:00 AM - 8:00 PM",
+        "sunday": "Domingo: 10:00 AM - 4:00 PM"
+    }
+}
