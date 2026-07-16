@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Codificación -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compatibilidad -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Título -->
+    <title>Barbería ISAAC | Cortes modernos en Huánuco</title>
+
+    <!-- Descripción -->
+    <meta name="description"
+        content="Barbería ISAAC en Huánuco. Cortes modernos, degradados, barba y atención profesional. Reserva por WhatsApp.">
+
+    <!-- Palabras clave -->
+    <meta name="keywords" content="barbería, barbería Huánuco, fade, cortes, barba, peluquería">
+
+    <!-- Autor -->
+    <meta name="author" content="Tu Nombre">
+
+    <!-- Color del navegador -->
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+
+    <!-- Font Awesome -->
+
+    <!-- Favicon -->
+
+</head>
+
+<!--
+    ============================================
+    CUERPO PRINCIPAL DE LA PÁGINA
+    ============================================
+    - bg-barberia-dark: Color de fondo oscuro personalizado
+    - text-white: Texto blanco por defecto
+    - font-body: Fuente principal Poppins
+-->
+
+<body class="bg-barberia-dark text-white font-body">
+
+    <!--
+        ============================================
+        BARRA DE NAVEGACIÓN (NAVBAR)
+        ============================================
+        - fixed top-0: Fija el navbar en la parte superior
+        - w-full: Ocupa todo el ancho
+        - bg-barberia-dark/95: Fondo oscuro con 95% de opacidad
+        - backdrop-blur-sm: Efecto de desenfoque del contenido detrás
+        - z-50: Capa superior para que siempre esté visible
+        - border-b: Borde inferior dorado semitransparente
+    -->
+    <nav class="fixed top-0 w-full bg-black backdrop-blur-sm z-50 ">
+        <!-- Contenedor del contenido del navbar -->
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo de la barbería con fuente elegante -->
+            <div class="text-2xl font-display font-bold text-red-600">
+                BARBERÍA <span class="text-white">ISAAC</span>
+            </div>
+
+            <!-- Menú de navegación para escritorio (visible en md hacia arriba) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-red-500 transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-red-500 transition-colors">Servicios</a>
+                <a href="#galeria" class="hover:text-red-500 transition-colors">Galería</a>
+                <a href="#contacto" class="hover:text-red-500 transition-colors">Contacto</a>
+            </div>
+
+            <!-- Botón de menú hamburguesa (visible solo en móviles) -->
+            <button id="menuBtn" class="md:hidden text-2xl transition-transform duration-300 hover:scale-110"
+                aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú desplegable para móviles (oculto por defecto) -->
+        <<div id="mobileMenu" class="hidden md:hidden bg-black px-6 py-4 space-y-3 transition-all duration-300">
+            <a href="#inicio" class="block hover:text-red-500 transition-colors">Inicio</a>
+            <a href="#servicios" class="block hover:text-red-500 transition-colors">Servicios</a>
+            <a href="#galeria" class="block hover:text-red-500 transition-colors">Galería</a>
+            <a href="#contacto" class="block hover:text-red-500 transition-colors">Contacto</a>
+            </div>
+    </nav>
+
+    <!--
+        ============================================
+                SECCIÓN HERO (PORTADA PRINCIPAL)
+        ============================================
+    -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Capa de gradiente oscuro para mejorar legibilidad del texto -->
+        <div class="absolute inset-0 bg-gradient-to-r from-barberia-dark to-transparent z-10"></div>
+
+        <!-- Imagen de fondo de la barbería con opacidad reducida -->
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-30">
+        </div>
+
+        <!-- Contenido principal del hero (por encima de las capas) -->
+        <div class="relative z-20 text-center px-6 max-w-4xl">
+            <!-- Título principal con fuente grande y decorativa -->
+            <h1 class="text-5xl md:text-7xl font-display font-black mb-6">
+                <span class="text-red-600">EL ARTE</span> DE<br>UN BUEN CORTE - ISAAC
+            </h1>
+
+            <!-- Subtítulo descriptivo -->
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                (Descripción breve de la barbería, su historia o su filosofía. Algo que conecte emocionalmente con el
+                cliente y lo invite a conocer más.)
+            </p>
+
+            <!-- Botón de llamada a la acción (CTA) para WhatsApp -->
+            <button onclick="contactarWhatsApp()"
+                class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg">
+                <i class="fab fa-whatsapp mr-2"></i>Reserva tu cita
+            </button>
+        </div>
+    </section>
+
+    <!--
+        ============================================
+                    SECCIÓN DE SERVICIOS
+        ============================================
+    -->
+    <section id="servicios" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Encabezado de la sección -->
+            <h2 class="text-black text-4xl md:text-5xl font-display font-bold text-center mb-4">
+                Nuestros <span class="text-blue-600">Servicios</span>
+            </h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                Ofrecemos servicios de alta calidad para el cuidado masculino
+            </p>
+
+            <!-- Grid de servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div
+                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
+                    <!-- <div class="text-4xl mb-4">✂️</div> -->
+                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Corte de Cabello (Clásico o
+                        Moderno)</h3>
+                    <p class="text-justify text-gray-500 mb-4">Corte de pelo personalizado a máquina y tijera, incluye
+                        acabados con
+                        fade (degradados) y peinado final con productos profesionales (ceras, polvos, pomadas)</p>
+                    <p class="text-center text-3xl font-bold text-white">S/35</p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div
+                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
+                    <!-- <div class="text-4xl mb-4">🪒</div> -->
+                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Arreglo y Perfilado de Barba
+                    </h3>
+                    <p class="text-justify text-gray-500 mb-4">Rebaje, diseño de contornos y perfilado de la barba.
+                        Suele incluir el
+                        uso de máquina, navaja, toalla caliente y aplicación de aceites hidratantes o after shave.</p>
+                    <p class="text-center text-3xl font-bold text-white">S/20</p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div
+                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
+                    <!-- <div class="text-4xl mb-4">💈</div> -->
+                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Servicio Completo (Corte +
+                        Barba)</h3>
+                    <p class="text-justify text-gray-500 mb-4">Un combo que incluye corte de cabello, diseño de barba y
+                        lavado
+                        capilar, ideal para un cambio de look total en una sola sesión.</p>
+                    <p class="text-center text-3xl font-bold text-white">S/50</p>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div
+                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
+                    <!-- <div class="text-4xl mb-4">✂️</div> -->
+                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Afeitado Clásico o Spa</h3>
+                    <p class="text-justify text-gray-500 mb-4">Experiencia de afeitado al ras con navaja tradicional.
+                        Incluye el uso de toallas calientes, vapor y lociones para abrir y cerrar los poros, evitando la
+                        irritación</p>
+                    <p class="text-center text-3xl font-bold text-white">S/30</p>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div
+                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
+                    <!-- <div class="text-4xl mb-4">🪒</div> -->
+                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Limpieza Facial</h3>
+                    <p class="text-justify text-gray-500 mb-4">Tratamiento enfocado en el cuidado de la piel del rostro.
+                        Incluye exfoliación, vaporización, retiro de puntos negros y aplicación de mascarillas.</p>
+                    <p class="text-center text-3xl font-bold text-white">S/35</p>
+                </div>
+
+                <!-- Servicio 6 -->
+                <!-- <div
+                    class="bg-blue-950 p-8 rounded-2xl hover:transform hover:scale-105 transition-all border border-barberia-gold/20 hover:border-barberia-gold/50">
+                    <h3 class="text-center text-2xl font-display font-bold mb-4 text-white">Servicio 6</h3>
+                    <p class="text-justify text-gray-500 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Consectetur nesciunt commodi neque culpa voluptates cumque, et delectus sit! Odit ex ipsum rerum
+                        eos commodi. Architecto accusamus quod odio assumenda modi?</p>
+                    <p class="text-center text-3xl font-bold text-white">S/30</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!--
+        ============================================
+                SECCIÓN DE GALERÍA DE IMÁGENES
+        ============================================
+    -->
+    <section id="galeria" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-black text-4xl md:text-5xl font-display font-bold text-center mb-4">
+                Nuestra <span class="text-blue-600">Galería</span>
+            </h2>
+            <p class="text-gray-600 text-center mb-12">Algunos de nuestros mejores trabajos</p>
+
+            <!-- Grid de imágenes con efecto hover -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Imagen 1 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Corte 1" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 2 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Corte 2" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 3 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Corte 3" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 4 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://theshaveclub.imgix.net/uploads/2025/03/Diferencia-entre-barberia-y-peluqueria.jpg?auto=format%2Ccompress&ixlib=php-3.3.0"
+                        alt="Corte 4" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 5 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://www.emagister.com/blog/wp-content/uploads/2020/10/nathon-oski-EW_rqoSdDes-unsplash.jpg"
+                        alt="Corte 1" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 6 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://www.blackwhitebarber.es/images/barberia-vigo.jpg" alt="Corte 2"
+                        class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 7 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://images.fresha.com/locations/location-profile-images/2657770/6001511/8cee3734-3a05-47f0-9978-b66c75eabb8f-URBANUSBARBERA-CO-Antioquia-LaCeja-Fresha.jpg?class=venue-gallery-mobile&f_width=3840"
+                        alt="Corte 3" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+                <!-- Imagen 8 -->
+                <div class="relative overflow-hidden rounded-xl group">
+                    <img src="https://galanobarbershop.com.uy/wp-content/uploads/2025/01/Galano-Barberia-Barberia-Montevideo.jpg"
+                        alt="Corte 4" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        ============================================
+                    SECCIÓN DE CONTACTO
+        ============================================
+    -->
+    <section id="contacto" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">
+                <span class="text-blue-600">Contáctanos</span>
+            </h2>
+            <p class="text-gray-600 mb-12">Reserva tu cita o consulta nuestros servicios</p>
+
+            <!-- Tarjetas de información de contacto -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Teléfono -->
+                <div class="bg-blue-950 p-8 rounded-2xl">
+                    <i class="fas fa-phone text-4xl text-white mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Teléfono</h3>
+                    <p class="text-gray-400">(Número de celular)</p>
+                </div>
+
+                <!-- Horario -->
+                <div class="bg-blue-950 p-8 rounded-2xl">
+                    <i class="fas fa-clock text-4xl text-white mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Horario</h3>
+                    <p class="text-gray-400">(Horario de atención)</p>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="bg-blue-950 p-8 rounded-2xl">
+                    <i class="fas fa-location-dot text-4xl text-white mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Ubicación</h3>
+                    <p class="text-gray-400">(Dirección)</p>
+                </div>
+            </div>
+
+            <!-- Botón principal de contacto por WhatsApp -->
+            <button onclick="contactarWhatsApp()"
+                class="mt-12 bg-green-600 text-white px-12 py-5 rounded-full text-xl font-semibold hover:bg-green-700 transition-all transform hover:scale-105 shadow-2xl inline-flex items-center">
+                <i class="fab fa-whatsapp text-3xl mr-3"></i>
+                Contáctanos por WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!--
+        ============================================
+                    PIE DE PÁGINA (FOOTER)
+        ============================================
+    -->
+    <footer class="bg-black py-12 px-6 border-t border-barberia-gold/20">
+        <div class="container mx-auto max-w-6xl text-center">
+            <!-- Nombre de la barbería -->
+            <h3 class="text-2xl font-display font-bold text-red-600 mb-4">BARBERÍA <span class="text-white">(Nombre la
+                    barbería)</span> </h3>
+            <p class="text-gray-400 mb-6">(Frase de la barbería)</p>
+
+            <!-- Iconos de redes sociales -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- Instagram -->
+                <a href="#" class="text-gray-400 hover:text-red-500 transition-colors text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Facebook -->
+                <a href="#" class="text-gray-400 hover:text-red-500 transition-colors text-2xl">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- TikTok -->
+                <a href="#" class="text-gray-400 hover:text-red-500 transition-colors text-2xl">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <!-- Twitter -->
+                <a href="#" class="text-gray-400 hover:text-red-500 transition-colors text-2xl">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-gray-600 text-sm">© 2026 Barbería (Nombre de la barbería). Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!--
+        ============================================
+        CARGA DEL ARCHIVO JAVASCRIPT
+        ============================================
+        Se carga al final del body para que el DOM esté completamente
+        cargado antes de ejecutar cualquier script
+    -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
