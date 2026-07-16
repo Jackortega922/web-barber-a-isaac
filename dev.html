@@ -3,39 +3,177 @@
 
 <head>
 
-    <!-- Codificación -->
+    <!-- ==========================================
+         META TAGS BÁSICOS
+         ========================================== -->
     <meta charset="UTF-8">
-
-    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Compatibilidad -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Título -->
-    <title>Barbería ISAAC | Cortes modernos en Huánuco</title>
-
-    <!-- Descripción -->
+    <!-- ==========================================
+         SEO BÁSICO
+         ========================================== -->
+    <title>Barbería ISAAC | Cortes Premium en Huánuco</title>
     <meta name="description"
-        content="Barbería ISAAC en Huánuco. Cortes modernos, degradados, barba y atención profesional. Reserva por WhatsApp.">
-
-    <!-- Palabras clave -->
-    <meta name="keywords" content="barbería, barbería Huánuco, fade, cortes, barba, peluquería">
-
-    <!-- Autor -->
-    <meta name="author" content="Tu Nombre">
-
-    <!-- Color del navegador -->
+        content="Barbería profesional en Huánuco. Cortes modernos, degradados, barba y atención personalizada. ¡Reserva tu cita por WhatsApp!">
+    <meta name="keywords"
+        content="barbería, barbería Huánuco, cortes de cabello, fade, degradado, barba, peluquería, Pillco Marca">
+    <meta name="author" content="Barbería ISAAC">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
     <meta name="theme-color" content="#0f172a">
 
-    <!-- Tailwind -->
+    <!-- ==========================================
+         OPEN GRAPH - Redes Sociales
+         ========================================== -->
+    <meta property="og:title" content="Barbería ISAAC | Cortes Premium en Huánuco">
+    <meta property="og:description"
+        content="Transformamos tu estilo con cortes de precisión y atención personalizada. La mejor experiencia de barbería en Huánuco.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://barberia-isaac.netlify.app">
+    <meta property="og:image" content="https://barberia-isaac.netlify.app/img/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Barbería ISAAC - Cortes profesionales">
+    <meta property="og:site_name" content="Barbería ISAAC">
+    <meta property="og:locale" content="es_PE">
+
+    <!-- ==========================================
+         TWITTER CARDS
+         ========================================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Barbería ISAAC | Cortes Premium en Huánuco">
+    <meta name="twitter:description"
+        content="Transformamos tu estilo con cortes de precisión y atención personalizada.">
+    <meta name="twitter:image" content="https://barberia-isaac.netlify.app/img/og-image.webp">
+
+    <!-- ==========================================
+         FAVICONS
+         ========================================== -->
+    <!-- Favicon principal -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+
+    <!-- Android Chrome -->
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- ==========================================
+         CANONICAL URL
+         ========================================== -->
+    <link rel="canonical" href="https://barberia-isaac.netlify.app">
+
+    <!-- ==========================================
+         FONTS
+         ========================================== -->
+    <!-- Google Fonts - Cargadas de forma óptima -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================
+         TAILWIND CSS
+         ========================================== -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        barberia: {
+                            dark: '#0f172a',
+                            darker: '#020617',
+                            gold: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- Google Fonts -->
+    <!-- ==========================================
+         CSS PERSONALIZADO (5% del diseño)
+         ========================================== -->
+    <style>
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <!-- Font Awesome -->
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-    <!-- Favicon -->
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        /* Selección de texto */
+        ::selection {
+            background-color: rgba(245, 158, 11, 0.3);
+            color: #fff;
+        }
+
+        /* Animaciones personalizadas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        /* Reducción de movimiento para accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
 
 </head>
 

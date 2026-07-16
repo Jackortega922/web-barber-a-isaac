@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# En producción, proteger datos sensibles
+data/private/

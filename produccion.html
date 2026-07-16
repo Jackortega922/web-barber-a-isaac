@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+    <!-- 
+        ============================================
+        PLANTILLA DE PRODUCCIÓN
+        Copiar este archivo para cada nuevo cliente
+        Personalizar: nombre, colores, imágenes
+        ============================================
+    -->
+
+    <!-- ==========================================
+         META TAGS BÁSICOS
+         ========================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ==========================================
+         SEO BÁSICO
+         ========================================== -->
+    <title>BARBERÍA [NOMBRE] | Cortes Premium en Huánuco</title>
+    <meta name="description"
+        content="Barbería profesional en Huánuco. Cortes modernos, degradados, barba y atención personalizada. ¡Reserva tu cita por WhatsApp!">
+    <meta name="keywords" content="barbería, barbería Huánuco, cortes de cabello, fade, degradado, barba, peluquería">
+    <meta name="author" content="BARBERÍA [NOMBRE]">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- ==========================================
+         OPEN GRAPH
+         ========================================== -->
+    <meta property="og:title" content="BARBERÍA [NOMBRE] | Cortes Premium en Huánuco">
+    <meta property="og:description" content="Transformamos tu estilo con cortes de precisión y atención personalizada.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://[DOMINIO].netlify.app">
+    <meta property="og:image" content="https://[DOMINIO].netlify.app/img/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="BARBERÍA [NOMBRE] - Cortes profesionales">
+    <meta property="og:locale" content="es_PE">
+
+    <!-- ==========================================
+         TWITTER CARDS
+         ========================================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BARBERÍA [NOMBRE] | Cortes Premium en Huánuco">
+    <meta name="twitter:description" content="Transformamos tu estilo con cortes de precisión.">
+    <meta name="twitter:image" content="https://[DOMINIO].netlify.app/img/og-image.webp">
+
+    <!-- ==========================================
+         FAVICONS
+         ========================================== -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- ==========================================
+         CANONICAL URL
+         ========================================== -->
+    <link rel="canonical" href="https://[DOMINIO].netlify.app">
+
+    <!-- ==========================================
+         FONTS
+         ========================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================
+         TAILWIND CSS
+         ========================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#f59e0b',    // Cambiar por color del cliente
+                            secondary: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ==========================================
+         CSS PERSONALIZADO
+         ========================================== -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        ::selection {
+            background-color: rgba(245, 158, 11, 0.3);
+            color: #fff;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-950 text-white font-body">
+
+    <!-- 
+        ============================================
+        CONTENIDO DE LA PLANTILLA
+        Copiar y pegar aquí TODO el contenido de dev.html
+        excepto el <head> y los scripts finales
+        ============================================
+    -->
+
+    <!-- Aquí iría todo el contenido de dev.html -->
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

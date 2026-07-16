@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /js/
+
+Sitemap: https://barberia-isaac.netlify.app/sitemap.xml
+
+# Crawl-delay para no sobrecargar el servidor
+Crawl-delay: 10

@@ -1,0 +1,33 @@
+{
+    "name": "Barbería ISAAC - Cortes Premium en Huánuco",
+    "short_name": "Barbería ISAAC",
+    "description": "Cortes modernos, degradados y barba profesional en Huánuco",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#0f172a",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "lang": "es-PE",
+    "categories": [
+        "business",
+        "lifestyle"
+    ]
+}
