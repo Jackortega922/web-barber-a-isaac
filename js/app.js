@@ -9,6 +9,7 @@ import { initScroll } from './scroll.js';
 import { initAnimations } from './animations.js';
 import { initWhatsApp } from './whatsapp.js';
 import { initCatalog } from './catalog.js';
+import { initGallery } from './gallery.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
@@ -16,4 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initWhatsApp();
     initCatalog();
+    initGallery();
 });
