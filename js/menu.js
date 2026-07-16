@@ -1,5 +1,3 @@
-import { initMenu } from "./menu.js";
-
 export function initMenu() {
     const menuButton = document.querySelector("#menuBtn");
     const mobileMenu = document.querySelector("#mobileMenu");
