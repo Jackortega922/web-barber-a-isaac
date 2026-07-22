@@ -5,6 +5,20 @@
 [build]
   publish = "/"
 
+# Bloquear archivos de plantilla/desarrollo que aún no están a la venta
+# (index.html y script.js SÍ deben seguir públicos: ya están vendidos)
+[[redirects]]
+  from = "/dev.html"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/produccion.html"
+  to = "/"
+  status = 404
+  force = true
+
 # Headers de seguridad y caché
 [[headers]]
   for = "/*"
